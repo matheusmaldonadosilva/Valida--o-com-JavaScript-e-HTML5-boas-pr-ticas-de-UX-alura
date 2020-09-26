@@ -1,11 +1,21 @@
-import { validarInput } from "./validar.js";
-// const { validarDataNascimento } = require("./validarDataNascimento.js");
-window.onload = () => {
-    const inputs = document.querySelectorAll("input");
+import { validarInput } from './validar.js';
 
-    inputs.forEach(input => {
-        input.addEventListener("input", () => {
-           validarInput(input);
-        });
-    })
-}
+window.onload = function () {
+  const inputs = document.querySelectorAll('input');
+
+  inputs.forEach(input => {
+    input.addEventListener('invalid', (e) => {
+      e.preventDefault();
+
+      validarInput(input);
+    });
+
+    input.addEventListener('input', () => {
+      validarInput(input, false);
+    });
+
+    input.addEventListener('blur', () => {
+      validarInput(input);
+    });
+  });
+};
