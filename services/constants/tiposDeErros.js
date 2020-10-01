@@ -9,6 +9,7 @@ export const tiposDeErro = [
   TYPE_MISMATCH,
   VALUE_MISSING,
   TOO_SHORT,
+  PATTERN_MISMATCH,
   RANGE_UNDER_FLOW,
   CUSTOM_ERROR
 ];
